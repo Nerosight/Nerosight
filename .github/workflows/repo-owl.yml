@@ -1,0 +1,13 @@
+name: repo-owl
+on:
+  schedule:
+    - cron: "17 3 * * *" # nightly
+  workflow_dispatch: # adds a "Run workflow" button
+permissions:
+  contents: write
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Nerosight/repo-owl@v0
